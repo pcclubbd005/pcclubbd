@@ -1,4 +1,3 @@
-
 name: Build and Deploy Next.js to cPanel
 
 on:
@@ -35,5 +34,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           port: 21
+          timeout: 60000
+          log-level: verbose
           local-dir: ./out/
           server-dir: /
