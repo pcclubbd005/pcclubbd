@@ -4,19 +4,19 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
-    image: "/hello_ecomm2/images/sliders/slider1.webp",
+    image: "/images/sliders/slider1.webp",
     title: "CCTV & Security Systems",
     description:
       "Smart surveillance and reliable security solutions for homes and businesses.",
   },
   {
-    image: "/hello_ecomm2/images/sliders/slider8.webp",
+    image: "/images/sliders/slider8.webp",
     title: "Servers & Networking",
     description:
       "Professional server setup, structured cabling and network infrastructure.",
   },
   {
-    image: "/hello_ecomm2/images/sliders/slider9.webp",
+    image: "/images/sliders/slider9.webp",
     title: "Complete IT Solutions",
     description:
       "Installation, maintenance and technical support for your business.",

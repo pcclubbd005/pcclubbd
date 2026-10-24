@@ -26,7 +26,7 @@ export default function Header() {
           onClick={() => setMenuOpen(false)}
         >
           <img
-            src="/hello_ecomm2/images/cropped-pcclub.jpg"
+            src="/images/cropped-pcclub.jpg"
             alt="PC Club BD logo"
             className="h-9 w-auto max-w-10 shrink-0 object-contain sm:h-10 sm:max-w-none"
           />

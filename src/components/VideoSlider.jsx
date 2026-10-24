@@ -8,17 +8,17 @@ const videos = [
   {
     title: 'CCTV Camera Solutions',
     description: 'Explore modern CCTV cameras and security systems.',
-    src: '/hello_ecomm2/videos/promo.mp4',
+    src: '/videos/promo.mp4',
   },
   {
     title: 'Server & Storage',
     description: 'Discover server hardware and storage solutions.',
-    src: '/hello_ecomm2/videos/promo2.mp4',
+    src: '/videos/promo2.mp4',
   },
   {
     title: 'Networking Solutions',
     description: 'Learn about business networks and connectivity.',
-    src: '/hello_ecomm2/videos/promo3.mp4',
+    src: '/videos/promo3.mp4',
   },
 ];
 

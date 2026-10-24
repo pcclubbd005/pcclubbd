@@ -14,12 +14,12 @@ export const CATEGORIES = [
 
 // Sample data: replace names and prices with real stock.
 const RAW = [
-  { id: 1, n: '4MP Dome IP Camera', c: 'IP Camera', p: 6800, o: 7500, s: 'PoE, night vision, indoor and outdoor.', img: '/hello_ecomm2/shopimgs/dom_cam.webp', },
-  { id: 2, n: '5MP Bullet IP Camera', c: 'IP Camera', p: 7900, s: 'Weatherproof, 30 m IR range, PoE.', img: '/hello_ecomm2/shopimgs/bullet_cam.webp', },
-  { id: 3, n: '4-Camera CCTV Kit', c: 'IP Camera', p: 24500, o: 27000, s: '4 cameras, recorder and 1 TB disk. Installation quoted separately.', img: '/hello_ecomm2/shopimgs/cctv_kit.webp', },
-  { id: 4, n: '8-Channel 4K NVR', c: 'Server & Storage', p: 12900, s: 'Records 8 IP cameras, HDMI out, mobile viewing.', img: '/hello_ecomm2/shopimgs/nvr.webp', },
-  { id: 5, n: 'Tower Server Xeon 32GB', c: 'Server & Storage', p: 118000, o: 128000, s: 'Xeon CPU, 32 GB RAM, RAID-ready for office file and app servers.', img: '/hello_ecomm2/shopimgs/tower_server.webp', },
-  { id: 6, n: 'Netgear 24-Port Gigabit Switch', c: 'Networking', p: 14500, s: 'Rack-mount managed switch for office networks.', img: '/hello_ecomm2/shopimgs/switch.webp', },
+  { id: 1, n: '4MP Dome IP Camera', c: 'IP Camera', p: 6800, o: 7500, s: 'PoE, night vision, indoor and outdoor.', img: '/shopimgs/dom_cam.webp', },
+  { id: 2, n: '5MP Bullet IP Camera', c: 'IP Camera', p: 7900, s: 'Weatherproof, 30 m IR range, PoE.', img: '/shopimgs/bullet_cam.webp', },
+  { id: 3, n: '4-Camera CCTV Kit', c: 'IP Camera', p: 24500, o: 27000, s: '4 cameras, recorder and 1 TB disk. Installation quoted separately.', img: '/shopimgs/cctv_kit.webp', },
+  { id: 4, n: '8-Channel 4K NVR', c: 'Server & Storage', p: 12900, s: 'Records 8 IP cameras, HDMI out, mobile viewing.', img: '/shopimgs/nvr.webp', },
+  { id: 5, n: 'Tower Server Xeon 32GB', c: 'Server & Storage', p: 118000, o: 128000, s: 'Xeon CPU, 32 GB RAM, RAID-ready for office file and app servers.', img: '/shopimgs/tower_server.webp', },
+  { id: 6, n: 'Netgear 24-Port Gigabit Switch', c: 'Networking', p: 14500, s: 'Rack-mount managed switch for office networks.', img: '/shopimgs/switch.webp', },
   { id: 7, n: 'Cisco Dual-WAN Router', c: 'Networking', p: 21000, s: 'Two internet lines, VPN and firewall.' },
   { id: 8, n: 'Wi-Fi 6 Ceiling Access Point', c: 'Networking', p: 8900, s: 'Dual-band, PoE, covers about 150 sq m.' },
   { id: 9, n: 'Fingerprint Attendance Terminal', c: 'Access Control', p: 9800, s: 'Fingerprint and card, reports exported to Excel.' },
