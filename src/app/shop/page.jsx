@@ -2,37 +2,55 @@
 'use client';
 
 import { Suspense, useEffect, useMemo, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { CATEGORIES, PRODUCTS } from '@/data/products';
 import { useStore } from '@/context/store';
 import ProductCard from '@/components/ProductCard';
 
 function ShopContent() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const { cat, setCat } = useStore();
 
   const [q, setQ] = useState('');
   const [sort, setSort] = useState('pop');
 
-  // Read category from /shop?category=IP%20Camera
-  useEffect(() => {
-    const category = searchParams.get('category');
+  // URL is the source of truth when opening or refreshing /shop
+  const urlCategory = searchParams.get('category');
+  const selectedCategory =
+    urlCategory && CATEGORIES.includes(urlCategory) ? urlCategory : 'All';
 
-    if (category && CATEGORIES.includes(category)) {
-      setCat(category);
-    } else {
-      setCat('All');
+  useEffect(() => {
+    if (cat !== selectedCategory) {
+      setCat(selectedCategory);
     }
-  }, [searchParams, setCat]);
+  }, [cat, selectedCategory, setCat]);
+
+  // Clicking a category updates both the URL and store
+  function selectCategory(category) {
+    setCat(category);
+
+    const params = new URLSearchParams(searchParams.toString());
+
+    if (category === 'All') {
+      params.delete('category');
+    } else {
+      params.set('category', category);
+    }
+
+    const query = params.toString();
+    router.push(query ? `/shop?${query}` : '/shop');
+  }
 
   const list = useMemo(() => {
-    let result = PRODUCTS.filter((p) => {
-      const matchesCategory = cat === 'All' || p.c === cat;
-      const searchText =
-        `${p.n} ${p.s || ''} ${p.brand || ''} ${p.model || ''}`.toLowerCase();
-      const matchesSearch = searchText.includes(q.toLowerCase());
+    let result = PRODUCTS.filter((product) => {
+      const matchesCategory =
+        selectedCategory === 'All' || product.c === selectedCategory;
 
-      return matchesCategory && matchesSearch;
+      const searchableText =
+        `${product.n} ${product.s || ''} ${product.brand || ''} ${product.model || ''}`.toLowerCase();
+
+      return matchesCategory && searchableText.includes(q.toLowerCase());
     });
 
     if (sort === 'lo') {
@@ -42,13 +60,13 @@ function ShopContent() {
     }
 
     return result;
-  }, [cat, q, sort]);
+  }, [selectedCategory, q, sort]);
 
   return (
     <section id="shop" className="py-14">
       <div className="wrap">
         <h1 className="h2 mb-5">
-          {cat === 'All' ? 'IT Equipment' : cat}
+          {selectedCategory === 'All' ? 'IT Equipment' : selectedCategory}
         </h1>
 
         <div className="mb-[22px] flex flex-wrap gap-2.5">
@@ -56,14 +74,14 @@ function ShopContent() {
             className="field min-w-[200px] flex-1 !w-auto !p-2.5"
             placeholder="Search cameras, switches, servers"
             value={q}
-            onChange={(e) => setQ(e.target.value)}
+            onChange={(event) => setQ(event.target.value)}
             aria-label="Search products"
           />
 
           <select
             className="field !w-auto !p-2.5"
             value={sort}
-            onChange={(e) => setSort(e.target.value)}
+            onChange={(event) => setSort(event.target.value)}
             aria-label="Sort products"
           >
             <option value="pop">Featured</option>
@@ -77,11 +95,12 @@ function ShopContent() {
             <button
               key={category}
               type="button"
-              onClick={() => setCat(category)}
+              onClick={() => selectCategory(category)}
+              aria-pressed={selectedCategory === category}
               className={`rounded-full border px-3.5 py-[7px] text-[.9rem] ${
-                cat === category
+                selectedCategory === category
                   ? 'border-ink bg-ink text-white'
-                  : 'border-line bg-paper'
+                  : 'border-line bg-paper text-ink'
               }`}
             >
               {category}

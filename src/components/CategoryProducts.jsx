@@ -1,22 +1,20 @@
 
 'use client';
 
-import { useMemo } from 'react';
 import Link from 'next/link';
 import { CATEGORIES, PRODUCTS } from '@/data/products';
 import ProductCard from '@/components/ProductCard';
 
 export default function CategoryProducts() {
-  const products = useMemo(() => PRODUCTS, []);
-
   return (
-    <section className="py-10">
+    <section id="shop" className="py-10">
       <div className="wrap">
         <h2 className="h2 mb-5">IT Equipment</h2>
 
+        {/* Clicking a category opens the filtered Shop page */}
         <div className="mb-5 flex flex-wrap gap-2">
           <Link
-            href="/"
+            href="/shop"
             className="rounded-full border border-ink bg-ink px-4 py-2 text-sm text-white"
           >
             All Products
@@ -26,25 +24,32 @@ export default function CategoryProducts() {
             <Link
               key={category}
               href={`/shop?category=${encodeURIComponent(category)}`}
-              className="rounded-full border border-line bg-paper px-4 py-2 text-sm"
+              className="rounded-full border border-line bg-paper px-4 py-2 text-sm text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white"
             >
               {category}
             </Link>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {products.slice(0, 3).map((product) => (
-            <ProductCard key={product.id} p={product} />
+        {/* One product on mobile, three on desktop */}
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-[18px]">
+          {PRODUCTS.slice(0, 3).map((product, index) => (
+            <div
+              key={product.id}
+              className={index > 0 ? 'hidden md:block' : ''}
+            >
+              <ProductCard p={product} />
+            </div>
           ))}
         </div>
 
+        {/* Open the full catalog */}
         <div className="mt-6 text-center">
           <Link
             href="/shop"
-            className="inline-block rounded-md bg-ink px-6 py-3 text-sm font-semibold text-white"
+            className="inline-flex items-center justify-center rounded-md bg-ink px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-cable"
           >
-            View All Products →
+            View More Products →
           </Link>
         </div>
       </div>
