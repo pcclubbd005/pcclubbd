@@ -9,6 +9,11 @@ const companies = [
   { name: "MEMIS", logo: "images/companies/memis.jpeg" },
   { name: "ICT Devision", logo: "images/companies/ict.png" },
   { name: "FAO - Food and Agriculture Organization of the United Nations", logo: "images/companies/fao.png" },
+  { name: "Ministry of Finance", logo: "images/companies/finance.png" },
+  { name: "Abdul Monem Ltd", logo: "images/companies/abdul_monem.svg" },
+  { name: "Link3 Technologies Ltd.", logo: "images/companies/link3.png" },
+  { name: "Bangladesh Bank", logo: "images/companies/bangladesh_bank.png" },
+  { name: "Nagad", logo: "images/companies/nagad.svg" },
   // Add your actual company logos here
 ];
 
@@ -19,7 +24,7 @@ export default function Companies() {
     <section className="mt-4 overflow-hidden border-y border-line bg-white py-4">
       <div className="wrap mb-4 text-center">
         <h2 className="text-lg font-bold text-ink sm:text-xl">
-          Companies We’ve Worked With
+          Widespread Experience with Leading Players in the Market
         </h2>
       </div>
 
