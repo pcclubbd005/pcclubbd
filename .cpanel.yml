@@ -3,4 +3,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/pcclubbd/public_html/
-    - /bin/cp -R out/. "$DEPLOYPATH"
+    - /bin/cp -R /home/pcclubbd/repositories/pcclubbd/out/. "$DEPLOYPATH"
