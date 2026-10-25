@@ -14,7 +14,11 @@ const companies = [
   { name: "Link3 Technologies Ltd.", logo: "images/companies/link3.png" },
   { name: "Bangladesh Bank", logo: "images/companies/bangladesh_bank.png" },
   { name: "Nagad", logo: "images/companies/nagad.svg" },
-  // Add your actual company logos here
+  { name: "Amber Group", logo: "images/companies/amber_group.jpeg" },
+  { name: "Partex Group", logo: "images/companies/partex.png" },
+  { name: "Jamuna Future Park", logo: "images/companies/jamuna.png" },
+  { name: "Amber IT", logo: "images/companies/amber.jpeg" },
+  { name: "Amber IT", logo: "images/companies/energy_pack.png" },
 ];
 
 export default function Companies() {
