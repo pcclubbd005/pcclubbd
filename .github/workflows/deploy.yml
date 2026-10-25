@@ -36,14 +36,16 @@ jobs:
           test -f out/_next/static/css/062360d32a80ebcc.css
           find out -maxdepth 2 -type f | head -30
 
-      - name: Deploy to cPanel using FTPS
+
+      - name: Deploy to cPanel using FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
+          protocol: ftp
           port: 21
           local-dir: out/
           server-dir: public_html/
           dangerous-clean-slate: false
+
