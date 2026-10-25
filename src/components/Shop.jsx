@@ -21,7 +21,7 @@ export default function Shop() {
   return (
     <section id="shop" className="py-14">
       <div className="wrap">
-        <h2 className="h2">Shop equipment</h2>
+        <h2 className="h2">IT equipment</h2>
         <div className="mb-[22px] flex flex-wrap gap-2.5">
           <input
             className="field min-w-[200px] flex-1 !w-auto !p-2.5"

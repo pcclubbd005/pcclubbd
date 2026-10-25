@@ -6,10 +6,11 @@ import { FaBars, FaCartShopping, FaXmark } from "react-icons/fa6";
 import { useState } from "react";
 
 const NAV = [
-  ["Shop", "#shop"],
-  ["Services", "#services"],
-  ["Site survey", "#survey"],
-  ["Contact", "#contact"],
+  ["Shop", "/#shop"],
+  ["Services", "/#services"],
+  ["Site survey", "/#survey"],
+  ["About Us", "/aboutus"],
+  ["Contact", "/#contact"],
 ];
 
 export default function Header() {

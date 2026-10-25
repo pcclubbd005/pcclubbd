@@ -6,6 +6,8 @@ import Services from '@/components/Services';
 import Survey from '@/components/Survey';
 import Contact from '@/components/Contact';
 import VideoSlider from '@/components/VideoSlider';
+import Partners from '@/components/Partners';
+import Companies from '@/components/Companies';
 
 export default function Home() {
   return (
@@ -13,9 +15,11 @@ export default function Home() {
       <Hero />
       <HeroSlider />
       <TrustStrip />
+      <Companies />
       <Shop />
       <VideoSlider />
       <Services />
+      <Partners />
       <section id="survey" className="py-14">
         <div className="wrap grid gap-10 md:grid-cols-2">
           <Survey />

@@ -192,3 +192,52 @@
     display: none;
   }
 }
+
+
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.25); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.2); }
+  60% { transform: scale(1); }
+}
+
+.animate-heartbeat {
+  display: inline-block;
+  animation: heartbeat 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-heartbeat {
+    animation: none;
+  }
+}
+
+/* Discourage text selection across the website */
+body {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Keep form fields usable */
+input,
+textarea,
+[contenteditable="true"] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+@keyframes company-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-company-scroll {
+  animation: company-scroll 35s linear infinite;
+}
