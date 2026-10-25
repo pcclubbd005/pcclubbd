@@ -239,5 +239,5 @@ textarea,
 }
 
 .animate-company-scroll {
-  animation: company-scroll 35s linear infinite;
+  animation: company-scroll 60s linear infinite;
 }
