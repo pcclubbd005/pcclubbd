@@ -33,17 +33,17 @@ jobs:
       - name: Verify export
         run: |
           test -f out/index.html
-          ls -lah out/
+          test -f out/_next/static/css/062360d32a80ebcc.css
+          find out -maxdepth 2 -type f | head -30
 
-      - name: Deploy to cPanel
-        uses: appleboy/scp-action@v1
+      - name: Deploy to cPanel using FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          port: ${{ secrets.SSH_PORT }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          fingerprint: ${{ secrets.SSH_FINGERPRINT }}
-          source: "out/*"
-          target: "/home/pcclubbd/public_html/"
-          overwrite: true
-          command_timeout: 10m
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: out/
+          server-dir: public_html/
+          dangerous-clean-slate: false
