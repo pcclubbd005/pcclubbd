@@ -21,7 +21,7 @@ export default function Partners() {
     <section className="overflow-hidden border-y border-line bg-paper py-6 mt-8">
       <div className="wrap mb-4 text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-mut">
-          Brands we work with
+          Brands
         </p>
       </div>
 
