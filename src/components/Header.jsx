@@ -1,53 +1,74 @@
 
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useStore } from "@/context/store";
-import { FaBars, FaCartShopping, FaXmark } from "react-icons/fa6";
+import { FaBars, FaCartShopping, FaXmark, FaHouse } from "react-icons/fa6";
 import { useState } from "react";
 
 const NAV = [
-  ["Shop", "/#shop"],
-  ["Services", "/#services"],
-  ["Site survey", "/#survey"],
-  ["About Us", "/aboutus"],
-  ["Contact", "/#contact"],
+  { name: "Home", href: "/", icon: FaHouse },
+  { name: "Shop", href: "/shop" },
+  { name: "Services", href: "/#services" },
+  { name: "Site Survey", href: "/#survey" },
+  { name: "About Us", href: "/aboutus" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Header() {
   const { count, setOpen } = useStore();
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <header className="sticky top-0 z-30 border-b border-line bg-paper/95 shadow-sm backdrop-blur">
       <div className="wrap flex min-h-16 items-center gap-3 py-2 sm:gap-4">
-        {/* Logo */}
-        <a
-          href="#top"
+        {/* Logo: click to go home */}
+        <Link
+          href="/"
+          onClick={closeMenu}
+          aria-label="PC Club BD home"
           className="flex min-w-0 shrink items-center gap-2"
-          onClick={() => setMenuOpen(false)}
         >
           <img
             src="/images/cropped-pcclub.jpg"
             alt="PC Club BD logo"
             className="h-9 w-auto max-w-10 shrink-0 object-contain sm:h-10 sm:max-w-none"
           />
-
           <span className="truncate font-display text-base font-extrabold tracking-tight sm:text-xl">
             PC CLUB
           </span>
-        </a>
+        </Link>
 
         {/* Desktop navigation */}
-        <nav className="ml-auto hidden items-center gap-4 lg:flex xl:gap-6">
-          {NAV.map(([name, href]) => (
-            <a
-              key={href}
-              href={href}
-              className="whitespace-nowrap text-sm font-medium transition-colors hover:text-cable xl:text-base"
-            >
-              {name}
-            </a>
-          ))}
+        <nav className="ml-auto hidden items-center gap-3 lg:flex xl:gap-5">
+          {NAV.map(({ name, href, icon: Icon }) => {
+            const active =
+              href === "/"
+                ? pathname === "/"
+                : href === "/shop"
+                  ? pathname.startsWith("/shop")
+                  : href.startsWith("/#")
+                    ? false
+                    : pathname === href;
+
+            return (
+              <Link
+                key={name}
+                href={href}
+                onClick={closeMenu}
+                className={`flex items-center gap-1 whitespace-nowrap text-sm font-medium transition-colors hover:text-cable xl:text-base ${
+                  active ? "text-cable" : ""
+                }`}
+              >
+                {Icon && <Icon aria-hidden="true" />}
+                {name}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Cart */}
@@ -79,16 +100,30 @@ export default function Header() {
       {/* Mobile navigation */}
       {menuOpen && (
         <nav className="border-t border-line bg-paper px-4 py-2 lg:hidden">
-          {NAV.map(([name, href]) => (
-            <a
-              key={href}
-              href={href}
-              onClick={() => setMenuOpen(false)}
-              className="block rounded-md px-3 py-3 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-cable"
-            >
-              {name}
-            </a>
-          ))}
+          {NAV.map(({ name, href, icon: Icon }) => {
+            const active =
+              href === "/"
+                ? pathname === "/"
+                : href === "/shop"
+                  ? pathname.startsWith("/shop")
+                  : href.startsWith("/#")
+                    ? false
+                    : pathname === href;
+
+            return (
+              <Link
+                key={name}
+                href={href}
+                onClick={closeMenu}
+                className={`flex items-center gap-2 rounded-md px-3 py-3 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-cable ${
+                  active ? "text-cable" : ""
+                }`}
+              >
+                {Icon && <Icon aria-hidden="true" />}
+                {name}
+              </Link>
+            );
+          })}
         </nav>
       )}
     </header>
