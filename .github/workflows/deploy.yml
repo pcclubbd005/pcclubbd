@@ -30,11 +30,58 @@ jobs:
       - name: Build static website
         run: npm run build
 
+
+name: Build and Deploy PC Club BD
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static website
+        run: npm run build
+
       - name: Verify export
         run: |
           test -f out/index.html
           test -f out/_next/static/css/062360d32a80ebcc.css
           find out -maxdepth 2 -type f | head -30
+
+
+      - name: Deploy to cPanel using FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          port: 21
+          local-dir: out/
+          server-dir: /
+          dangerous-clean-slate: false
+
+
 
 
       - name: Deploy to cPanel using FTP
