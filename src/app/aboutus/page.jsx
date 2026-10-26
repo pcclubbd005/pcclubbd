@@ -275,20 +275,47 @@ export default function AboutUsPage() {
             </div>
           </div>
 
-          <p className="mb-5 text-lg leading-8 text-mut">
-            PC Club provides IT infrastructure and security solutions for
-            businesses, offices, shops and homes in Bangladesh. Our service
-            areas include CCTV surveillance, IP cameras, servers, networking,
-            access control, biometric attendance and IT support.
-          </p>
+          <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2 md:gap-10">
+            {/* Left: Company information */}
+            <div>
+              <header className="mb-8">
+                <p className="mb-5 text-lg leading-8 text-mut">
+                  PC Club provides IT infrastructure and security solutions for
+                  businesses, offices, shops and homes in Bangladesh. Our
+                  service areas include CCTV surveillance, IP cameras, servers,
+                  networking, access control, biometric attendance and IT
+                  support.
+                </p>
 
-          <p className="leading-7 text-mut">
-            We help customers explore technology products and infrastructure
-            solutions suited to their requirements. From surveillance systems
-            and networking equipment to server infrastructure and access
-            control, our focus is on practical technology solutions for homes
-            and organizations.
-          </p>
+                <p className="leading-7 text-mut">
+                  We help customers explore technology products and
+                  infrastructure solutions suited to their requirements. From
+                  surveillance systems and networking equipment to server
+                  infrastructure and access control, our focus is on practical
+                  technology solutions for homes and organizations.
+                </p>
+              </header>
+
+            </div>
+
+            {/* Right: Company logo animation video */}
+            <div className="md:sticky md:top-24">
+              <video
+                className="h-auto w-full rounded-xl border border-line object-contain"
+                width="864"
+                height="496"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="PC Club company logo animation"
+              >
+                <source src="/videos/pcclub-animation.mp4" type="video/mp4" />
+                Your browser does not support the video element.
+              </video>
+            </div>
+          </div>
         </header>
 
         {/* Services */}
