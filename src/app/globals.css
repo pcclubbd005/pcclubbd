@@ -205,7 +205,7 @@
 
 .animate-heartbeat {
   display: inline-block;
-  animation: heartbeat 1.4s ease-in-out infinite;
+  animation: heartbeat 5s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

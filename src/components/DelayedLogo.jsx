@@ -1,8 +1,7 @@
+"use client";
 
-'use client';
-
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function DelayedLogo() {
   const [visible, setVisible] = useState(true);
@@ -16,14 +15,14 @@ export default function DelayedLogo() {
       hideTimer = setTimeout(() => setVisible(false), 700);
     };
 
-    if (document.readyState === 'complete') {
+    if (document.readyState === "complete") {
       finishLoading();
     } else {
-      window.addEventListener('load', finishLoading, { once: true });
+      window.addEventListener("load", finishLoading, { once: true });
     }
 
     return () => {
-      window.removeEventListener('load', finishLoading);
+      window.removeEventListener("load", finishLoading);
       clearTimeout(hideTimer);
     };
   }, []);
@@ -33,19 +32,19 @@ export default function DelayedLogo() {
   return (
     <div
       className={`fixed inset-0 z-[99999] flex items-center justify-center bg-white transition-opacity duration-700 ${
-        pageLoaded ? 'opacity-0' : 'opacity-100'
+        pageLoaded ? "opacity-0" : "opacity-100"
       }`}
       role="status"
       aria-label="Loading PC Club BD"
     >
       <div className="animate-heartbeat">
         <Image
-          src="/images/cropped-pcclub.jpg"
+          src="/images/pcclub.gif"
           alt="PC Club BD"
-          width={180}
-          height={180}
+          width={540}
+          height={380}
           priority
-          className="h-auto w-40 object-contain"
+          className="h-auto w-64 object-contain"
         />
       </div>
 
@@ -57,7 +56,8 @@ export default function DelayedLogo() {
         }
 
         @keyframes heartbeat {
-          0%, 100% {
+          0%,
+          100% {
             transform: scale(1);
           }
           8% {
