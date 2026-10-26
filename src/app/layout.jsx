@@ -7,6 +7,7 @@ import CartDrawer from "@/components/CartDrawer";
 import Toast from "@/components/Toast";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SecurityGuard from "@/components/SecurityGuard";
+import DelayedLogo from '@/components/DelayedLogo';
 
 export const metadata = {
   metadataBase: new URL("https://pcclubbd.com"),
@@ -64,6 +65,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <StoreProvider>
+          <DelayedLogo />
           <SecurityGuard />
           <TopBar />
           <Header />

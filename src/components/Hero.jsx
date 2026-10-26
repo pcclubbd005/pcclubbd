@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="wrap grid grid-cols-1 items-center gap-8 sm:gap-10 md:grid-cols-[1.1fr_.9fr] lg:gap-12">
         <div className="min-w-0">
           <p className="mb-3 text-sm font-bold uppercase tracking-wider text-cable">
-            PC Club BD · Dhaka, Bangladesh
+            PC Club · Dhaka, Bangladesh
           </p>
 
           <h1
@@ -21,7 +21,7 @@ export default function Hero() {
           </h1>
 
           <p className="mb-6 mt-4 max-w-[46ch] text-base leading-7 text-mut sm:mb-7 sm:mt-5 sm:text-lg">
-            PC Club BD supplies, installs and supports CCTV surveillance,
+            PC Club supplies, installs and supports CCTV surveillance,
             IP cameras, servers, networking, access control and IT
             infrastructure for businesses, shops and homes in Bangladesh.
           </p>
