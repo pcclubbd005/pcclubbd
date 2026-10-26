@@ -215,18 +215,18 @@
 }
 
 /* Discourage text selection across the website */
-body {
+/* body {
   -webkit-user-select: none;
   user-select: none;
-}
+} */
 
 /* Keep form fields usable */
-input,
+/* input,
 textarea,
 [contenteditable="true"] {
   -webkit-user-select: text;
   user-select: text;
-}
+} */
 
 @keyframes company-scroll {
   from {

@@ -66,7 +66,7 @@ export default function RootLayout({ children }) {
       <body>
         <StoreProvider>
           <DelayedLogo />
-          <SecurityGuard />
+          {/* <SecurityGuard /> */}
           <TopBar />
           <Header />
           <main>{children}</main>
