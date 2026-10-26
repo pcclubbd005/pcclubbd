@@ -8,7 +8,6 @@ import Toast from "@/components/Toast";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SecurityGuard from "@/components/SecurityGuard";
 
-
 export const metadata = {
   metadataBase: new URL("https://pcclubbd.com"),
 
@@ -18,22 +17,29 @@ export const metadata = {
   },
 
   description:
-    "PC Club BD provides CCTV surveillance, Uniview IP cameras, servers, networking, access control, biometric attendance, and IT support in Bangladesh.",
+    "PC Club BD supplies, installs and supports CCTV surveillance, IP cameras, servers, networking, access control, biometric attendance and IT infrastructure in Dhaka, Bangladesh.",
 
   applicationName: "PC Club BD",
 
-  alternates: {
-    canonical: "/",
-  },
+  creator: "PC Club BD",
+  publisher: "PC Club BD",
+
+  category: "technology",
 
   openGraph: {
     type: "website",
     locale: "en_BD",
-    url: "https://pcclubbd.com/",
     siteName: "PC Club BD",
-    title: "PC Club BD | IT Infrastructure & Security Solutions",
+    title: "PC Club BD | CCTV, Servers & Networking Solutions",
     description:
-      "Explore CCTV, IP surveillance, servers, networking, and enterprise IT solutions in Bangladesh.",
+      "Discover CCTV surveillance, IP cameras, servers, networking, access control and IT infrastructure solutions from PC Club BD in Bangladesh.",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "PC Club BD | CCTV, Servers & Networking Solutions",
+    description:
+      "CCTV surveillance, IP cameras, servers, networking and IT infrastructure solutions in Bangladesh.",
   },
 
   robots: {
@@ -42,6 +48,9 @@ export const metadata = {
     googleBot: {
       index: true,
       follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
     },
   },
 
@@ -49,7 +58,6 @@ export const metadata = {
     icon: "/favicon.ico",
   },
 };
-
 
 export default function RootLayout({ children }) {
   return (

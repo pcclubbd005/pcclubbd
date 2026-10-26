@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -39,7 +38,7 @@ export default function Header() {
             className="h-9 w-auto max-w-10 shrink-0 object-contain sm:h-10 sm:max-w-none"
           />
           <span className="truncate font-display text-base font-extrabold tracking-tight sm:text-xl">
-            PC CLUB
+            PC CLUB BD
           </span>
         </Link>
 

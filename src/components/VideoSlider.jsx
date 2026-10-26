@@ -1,6 +1,6 @@
 
 'use client';
-
+import Link from 'next/link';
 import { useRef, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
@@ -96,6 +96,14 @@ export default function VideoSlider() {
           </div>
         </div>
       </div>
+      <div className="mt-6 text-center">
+          <Link
+            href="/aboutus"
+            className="inline-flex items-center justify-center rounded-md bg-ink px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-cable"
+          >
+            About Us →
+          </Link>
+        </div>
     </section>
   );
 }
