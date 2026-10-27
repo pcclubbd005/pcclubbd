@@ -25,7 +25,7 @@ export default function DelayedLogo() {
         hideTimer = setTimeout(() => {
           if (!cancelled) setVisible(false);
         }, 700);
-      }, 3400);
+      }, 4000);
     };
 
     if (document.readyState === "complete") {
