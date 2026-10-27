@@ -12,7 +12,7 @@ export default function DelayedLogo() {
 
     const finishLoading = () => {
       setPageLoaded(true);
-      hideTimer = setTimeout(() => setVisible(false), 700);
+      hideTimer = setTimeout(() => setVisible(false), 9000);
     };
 
     if (document.readyState === "complete") {
@@ -48,7 +48,7 @@ export default function DelayedLogo() {
         />
       </div>
 
-      <style jsx>{`
+      {/* <style jsx>{`
         .animate-heartbeat {
           animation: heartbeat 2.4s ease-in-out infinite;
           transform-origin: center;
@@ -79,7 +79,7 @@ export default function DelayedLogo() {
             animation: none;
           }
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 }
