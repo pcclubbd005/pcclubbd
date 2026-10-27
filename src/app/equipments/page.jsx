@@ -39,7 +39,7 @@ function ShopContent() {
     }
 
     const query = params.toString();
-    router.push(query ? `/shop?${query}` : '/shop');
+    router.push(query ? `/equipments?${query}` : '/equipments');
   }
 
   const list = useMemo(() => {
