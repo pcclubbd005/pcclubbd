@@ -8,10 +8,10 @@ import { useState } from "react";
 
 const NAV = [
   { name: "Home", href: "/", icon: FaHouse },
-  { name: "Shop", href: "/shop" },
+  { name: "Equipments", href: "/equipments" },
   { name: "Services", href: "/#services" },
   { name: "Site Survey", href: "/#survey" },
-  { name: "About Us", href: "/aboutus" },
+  { name: "About Us", href: "/about" },
   { name: "Contact", href: "/#contact" },
 ];
 
@@ -48,8 +48,8 @@ export default function Header() {
             const active =
               href === "/"
                 ? pathname === "/"
-                : href === "/shop"
-                  ? pathname.startsWith("/shop")
+                : href === "/equipments"
+                  ? pathname.startsWith("/equipments")
                   : href.startsWith("/#")
                     ? false
                     : pathname === href;
@@ -103,8 +103,8 @@ export default function Header() {
             const active =
               href === "/"
                 ? pathname === "/"
-                : href === "/shop"
-                  ? pathname.startsWith("/shop")
+                : href === "/equipments"
+                  ? pathname.startsWith("/equipments")
                   : href.startsWith("/#")
                     ? false
                     : pathname === href;

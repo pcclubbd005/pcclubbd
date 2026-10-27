@@ -39,7 +39,7 @@ export default function DelayedLogo() {
     >
       <div className="animate-heartbeat">
         <Image
-          src="/images/pcclub.gif"
+          src="/images/pcclub_card.gif"
           alt="PC Club BD"
           width={540}
           height={380}
