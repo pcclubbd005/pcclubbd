@@ -241,3 +241,63 @@ textarea,
 .animate-company-scroll {
   animation: company-scroll 60s linear infinite;
 }
+
+
+/* Left-to-right diamond shine effect */
+.shine-button {
+  isolation: isolate;
+}
+
+.shine-button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 55%;
+  height: 200%;
+  pointer-events: none;
+
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 30%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(255, 255, 255, 0.12) 70%,
+    transparent 100%
+  );
+
+  transform: skewX(-25deg);
+  opacity: 0;
+}
+
+.shine-button:hover::before {
+  opacity: 1;
+  animation: diamond-shine 0.8s ease-in-out;
+}
+
+@keyframes diamond-shine {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 150%;
+    opacity: 0;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .shine-button:hover::before {
+    animation: none;
+  }
+}

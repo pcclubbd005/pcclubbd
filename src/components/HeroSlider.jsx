@@ -1,5 +1,5 @@
 "use client";
-import Link from 'next/link';
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const slides = [
@@ -90,14 +90,23 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="mt-6 text-center">
+      {/* <div className="mt-6 text-center">
           <Link
             href="/about"
             className="inline-flex items-center justify-center rounded-md bg-ink px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-cable"
           >
             About Us →
           </Link>
-        </div>
+        </div> */}
+
+      <div className="mt-6 text-center">
+        <Link
+          href="/about"
+          className="shine-button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-ink px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-cable"
+        >
+          <span className="relative z-10">About Us →</span>
+        </Link>
+      </div>
     </section>
   );
 }
