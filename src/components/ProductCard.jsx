@@ -73,7 +73,7 @@ export default function ProductCard({ p }) {
           {p.s}
         </p>
 
-        <div className="mt-1">
+        {/* <div className="mt-1">
           {hasPrice ? (
             <p className="text-lg font-bold text-cable">
               ৳{p.p.toLocaleString("en-BD")}
@@ -86,7 +86,7 @@ export default function ProductCard({ p }) {
               Call for Price
             </p>
           )}
-        </div>
+        </div> */}
 
         <button
           type="button"
