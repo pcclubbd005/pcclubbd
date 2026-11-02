@@ -8,6 +8,7 @@ import Toast from "@/components/Toast";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SecurityGuard from "@/components/SecurityGuard";
 import DelayedLogo from '@/components/DelayedLogo';
+import TechBackground from "@/components/TechBackground";
 
 export const metadata = {
   metadataBase: new URL("https://pcclubbd.com"),
@@ -64,6 +65,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <TechBackground />
         <StoreProvider>
           <DelayedLogo />
           {/* <SecurityGuard /> */}

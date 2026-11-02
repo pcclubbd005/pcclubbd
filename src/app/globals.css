@@ -18,6 +18,10 @@
   .h2 { @apply mb-[22px] font-display text-[clamp(1.7rem,3.4vw,2.4rem)] font-extrabold leading-[1.1] tracking-[-.02em]; }
 }
 
+body {
+  isolation: isolate;
+}
+
 .hero-slider {
   position: relative;
   height: min(680px, 76vh);

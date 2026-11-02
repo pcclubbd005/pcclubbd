@@ -1,19 +1,19 @@
+import Hero from "@/components/Hero";
+import HeroSlider from "@/components/HeroSlider";
+import TrustStrip from "@/components/TrustStrip";
+import CategoryProducts from "@/components/CategoryProducts";
+import Services from "@/components/Services";
+import Survey from "@/components/Survey";
+import Contact from "@/components/Contact";
+import VideoSlider from "@/components/VideoSlider";
+import Partners from "@/components/Partners";
+import Companies from "@/components/Companies";
 
-import Hero from '@/components/Hero';
-import HeroSlider from '@/components/HeroSlider';
-import TrustStrip from '@/components/TrustStrip';
-import CategoryProducts from '@/components/CategoryProducts';
-import Services from '@/components/Services';
-import Survey from '@/components/Survey';
-import Contact from '@/components/Contact';
-import VideoSlider from '@/components/VideoSlider';
-import Partners from '@/components/Partners';
-import Companies from '@/components/Companies';
-import SolarPanel from '@/components/SolarPanel';
 
 export default function Home() {
   return (
     <>
+
       <Hero />
       <HeroSlider />
       <TrustStrip />
@@ -23,7 +23,7 @@ export default function Home() {
 
       <VideoSlider />
       <Services />
-      
+
       <Partners />
 
       <section id="survey" className="py-14">
