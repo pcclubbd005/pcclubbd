@@ -19,7 +19,7 @@ export default function Hero() {
             id="home-heading"
             className="max-w-2xl font-display text-[clamp(2rem,7vw,3.9rem)] font-extrabold leading-[1.08] tracking-[-.03em]"
           >
-            CCTV, Servers & Networking Solutions in Dhaka
+            CCTV Surveillance, Servers & Networking Solutions in Bangladesh
           </h1>
 
           <p className="mb-6 mt-4 max-w-[46ch] text-base leading-7 text-mut sm:mb-7 sm:mt-5 sm:text-lg">
