@@ -9,6 +9,7 @@ import Contact from '@/components/Contact';
 import VideoSlider from '@/components/VideoSlider';
 import Partners from '@/components/Partners';
 import Companies from '@/components/Companies';
+import SolarPanel from '@/components/SolarPanel';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
 
       <VideoSlider />
       <Services />
+      
       <Partners />
 
       <section id="survey" className="py-14">

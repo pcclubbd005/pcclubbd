@@ -13,6 +13,7 @@ const NAV = [
   { name: "Site Survey", href: "/#survey" },
   { name: "About Us", href: "/about" },
   { name: "Contact", href: "/#contact" },
+  { name: 'Solar Calculator', href: '/solar' }
 ];
 
 export default function Header() {

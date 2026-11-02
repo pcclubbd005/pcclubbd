@@ -28,7 +28,7 @@ export default function Hero() {
 
           <div className="flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap">
             <a
-              href="/shop"
+              href="/equipments"
               className="btn inline-flex min-h-11 items-center justify-center text-center hover:text-ink"
             >
               Browse equipment
