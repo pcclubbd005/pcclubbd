@@ -54,9 +54,7 @@ export default function Rack() {
 
             <span className="flex-1 font-medium">{name}</span>
 
-            <small className="text-[#8FA6B1]">
-              {itemCount} items
-            </small>
+           
 
             <span aria-hidden="true" className="flex gap-[3px]">
               {[0, 1, 2, 3].map((k) => (

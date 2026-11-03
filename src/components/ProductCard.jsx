@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -38,7 +37,8 @@ export default function ProductCard({ p }) {
 
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-lg border border-line bg-paper">
-      <div className="relative aspect-[4/3] w-full bg-[#ffffff]">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-white">
+        {/* Main product image */}
         <Image
           src={imageSrc}
           alt={`${p.n} ${p.model || ""}`.trim()}
@@ -52,26 +52,54 @@ export default function ProductCard({ p }) {
             }
           }}
         />
+
+        {/* Special Offer - Top Left (Large) */}
+        {p.badges?.special && (
+          <img
+            src={p.badges.special}
+            alt="Special Offer"
+            className="pointer-events-none absolute left-1 top-1 z-20 w-6 object-contain sm:w-8"
+          />
+        )}
+
+        {/* New Arrival - Top Right */}
+        {p.badges?.color && (
+          <img
+            src={p.badges.color}
+            alt="ColorHunt"
+            className="pointer-events-none absolute right-1 top-1 z-20 w-16 object-contain drop-shadow-md sm:w-20"
+          />
+        )}
+
+        {/* Limited Stock - Bottom Right */}
+        {p.badges?.limited && (
+          <img
+            src={p.badges.limited}
+            alt="Limited Stock"
+            className="pointer-events-none absolute bottom-1 right-1 z-20 w-20 object-contain drop-shadow-md sm:w-24"
+          />
+        )}
+
+        {/* Warranty - Bottom Left */}
+        {p.badges?.wise && (
+          <img
+            src={p.badges.wise}
+            alt="WiseUp"
+            className="pointer-events-none absolute bottom-1 left-1 z-20 w-16 object-contain drop-shadow-md sm:w-20"
+          />
+        )}
       </div>
 
       <div className="flex flex-1 flex-col gap-2 p-3.5">
-        <small className="font-medium text-cable">
-          {p.c}
-        </small>
+        <small className="font-medium text-cable">{p.c}</small>
 
-        <h3 className="text-[1.02rem] font-semibold leading-[1.3]">
-          {p.n}
-        </h3>
+        <h3 className="text-[1.02rem] font-semibold leading-[1.3]">{p.n}</h3>
 
         {p.model && (
-          <p className="break-words text-xs text-mut">
-            Model: {p.model}
-          </p>
+          <p className="break-words text-xs text-mut">Model: {p.model}</p>
         )}
 
-        <p className="flex-1 text-[.88rem] text-mut">
-          {p.s}
-        </p>
+        <p className="flex-1 text-[.88rem] text-mut">{p.s}</p>
 
         {/* <div className="mt-1">
           {hasPrice ? (

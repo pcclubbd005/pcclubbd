@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useStore } from '@/context/store';
-import { money } from '@/lib/utils';
+
 
 export default function CartDrawer() {
   const { open, setOpen, items, cart, change, sub, disc, total, applyCode, order } = useStore();
@@ -30,7 +30,7 @@ export default function CartDrawer() {
                 <Image src={p.img} alt="" width={64} height={48} unoptimized className="h-12 w-16 rounded object-cover" />
                 <div>
                   <div>{p.n}</div>
-                  <div>{money(p.p)}</div>
+                  
                   <div className="mt-1 flex items-center gap-2">
                     <button onClick={() => change(p.id, -1)} aria-label="Less" className="h-[26px] w-[26px] rounded border border-line">−</button>
                     {cart[p.id]}
@@ -51,9 +51,6 @@ export default function CartDrawer() {
               <input className="field flex-1 !p-2.5" placeholder="Discount code" value={code} onChange={(e) => setCode(e.target.value)} />
               <button onClick={() => applyCode(code)} className="rounded-md bg-ink px-4 font-medium text-white hover:bg-cable">Apply</button>
             </div>
-            <div className="flex justify-between"><span>Subtotal</span><span>{money(sub)}</span></div>
-            {disc > 0 && <div className="flex justify-between"><span>Discount</span><span>−{money(disc)}</span></div>}
-            <div className="flex justify-between font-display text-[1.2rem] font-extrabold"><span>Total</span><span>{money(total)}</span></div>
             <button onClick={order} className="btn">Order on WhatsApp</button>
           </div>
         )}

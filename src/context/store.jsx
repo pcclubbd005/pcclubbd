@@ -2,7 +2,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { PRODUCTS } from '@/data/products';
 import { CODES } from '@/data/site';
-import { openWa, money } from '@/lib/utils';
+import { openWa } from '@/lib/utils';
 
 const Ctx = createContext(null);
 export const useStore = () => useContext(Ctx);
@@ -63,9 +63,7 @@ export function StoreProvider({ children }) {
   const order = () =>
     openWa(
       'Hello PC Club BD, I want to order:\n' +
-        items.map((p) => `${cart[p.id]} x ${p.n} - ${money(p.p * cart[p.id])}`).join('\n') +
-        (disc ? `\nDiscount: -${money(disc)}` : '') +
-        `\nTotal: ${money(total)}`
+        items.map((p) => `${cart[p.id]} x ${p.n}`).join('\n')
     );
 
   const value = { cat, setCat, cart, items, count, sub, disc, total, open, setOpen, toast, add, change, applyCode, pickCategory, order };
