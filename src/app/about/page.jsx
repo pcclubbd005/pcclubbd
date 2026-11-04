@@ -33,7 +33,7 @@ export const metadata = {
       "Discover PC Club BD's CCTV, server, networking and IT infrastructure solutions in Bangladesh.",
     images: [
       {
-        url: "/images/cropped-pcclub.jpg",
+        url: "/images/cropped-pcclub.jpeg",
         alt: "PC Club BD logo",
       },
     ],
@@ -270,77 +270,92 @@ function LogoGrid({ items, folder }) {
 const productCategories = [
   {
     title: "Desktop Computers, Laptops & Netbooks",
-    description: "Branded PCs, Mini PCs, laptops, custom-built computers, gaming laptops, tablet PCs and thin clients.",
+    description:
+      "Branded PCs, Mini PCs, laptops, custom-built computers, gaming laptops, tablet PCs and thin clients.",
     icon: Monitor,
   },
   {
     title: "Computer & Laptop Accessories and Components",
-    description: "Computer cases and coolers, power supplies, processors, motherboards, graphics cards, HDDs, SSDs, RAM, sound cards, optical drives, laptop batteries, adapters, bags, displays, docks and other accessories.",
+    description:
+      "Computer cases and coolers, power supplies, processors, motherboards, graphics cards, HDDs, SSDs, RAM, sound cards, optical drives, laptop batteries, adapters, bags, displays, docks and other accessories.",
     icon: Cpu,
   },
   {
     title: "Monitors, Projectors & Displays",
-    description: "LED/LCD monitors, TVs, interactive whiteboards and accessories, projectors, presenters, ceiling mounts, projection screens and related components.",
+    description:
+      "LED/LCD monitors, TVs, interactive whiteboards and accessories, projectors, presenters, ceiling mounts, projection screens and related components.",
     icon: Projector,
   },
   {
     title: "Mobile Phones, Tablets & Telephony",
-    description: "Smartphones, mobile devices, tablets, IP phones, PABX systems, multi-user telephony systems and video conferencing solutions.",
+    description:
+      "Smartphones, mobile devices, tablets, IP phones, PABX systems, multi-user telephony systems and video conferencing solutions.",
     icon: Smartphone,
   },
   {
     title: "Printers, Scanners & Print Supplies",
-    description: "Printers, scanners, multifunction copiers, POS printers, fax machines, plotters, barcode printers and scanners, card readers, conference systems, paper shredders and related equipment.",
+    description:
+      "Printers, scanners, multifunction copiers, POS printers, fax machines, plotters, barcode printers and scanners, card readers, conference systems, paper shredders and related equipment.",
     icon: Printer,
   },
   {
     title: "Servers",
-    description: "Enterprise servers, KVM switches, consoles, server accessories and I/O accelerators.",
+    description:
+      "Enterprise servers, KVM switches, consoles, server accessories and I/O accelerators.",
     icon: Server,
   },
   {
     title: "Networking",
-    description: "Routers, access points, Wi-Fi extenders, network switches, LAN cards, modems, racks, patch panels, patch cords, network interface cards, network security and wireless networking equipment.",
+    description:
+      "Routers, access points, Wi-Fi extenders, network switches, LAN cards, modems, racks, patch panels, patch cords, network interface cards, network security and wireless networking equipment.",
     icon: Network,
   },
   {
     title: "UPS & Power Backup",
-    description: "Online and offline UPS systems, UPS batteries and power backup products.",
+    description:
+      "Online and offline UPS systems, UPS batteries and power backup products.",
     icon: BatteryCharging,
   },
   {
     title: "Office Equipment & Consumables",
-    description: "Toner, cartridges, ink bottles, ribbons, refill supplies, drum units, print heads, keyboards, mice and other office essentials.",
+    description:
+      "Toner, cartridges, ink bottles, ribbons, refill supplies, drum units, print heads, keyboards, mice and other office essentials.",
     icon: BriefcaseBusiness,
   },
   {
     title: "Electrical & Electronic Equipment",
-    description: "Two-way radios and accessories, audio and stereo equipment, PA systems, televisions, video kits, virtual reality equipment and accessories.",
+    description:
+      "Two-way radios and accessories, audio and stereo equipment, PA systems, televisions, video kits, virtual reality equipment and accessories.",
     icon: Radio,
   },
   {
     title: "Security & Surveillance",
-    description: "CCTV cameras, IP and analogue surveillance systems, camera accessories, detectors, time attendance systems, access control, digital door locks, metal detectors and baggage X-ray scanners.",
+    description:
+      "CCTV cameras, IP and analogue surveillance systems, camera accessories, detectors, time attendance systems, access control, digital door locks, metal detectors and baggage X-ray scanners.",
     icon: ShieldCheck,
   },
   {
     title: "Cameras & Photography Accessories",
-    description: "Digital cameras, lenses, flashes, tripods, camera bags, cases, batteries, memory cards, professional camcorders, action cameras and accessories.",
+    description:
+      "Digital cameras, lenses, flashes, tripods, camera bags, cases, batteries, memory cards, professional camcorders, action cameras and accessories.",
     icon: Camera,
   },
   {
     title: "Communication Cables",
-    description: "Fiber-optic cables, UTP network cables, power cables and audio/video cables.",
+    description:
+      "Fiber-optic cables, UTP network cables, power cables and audio/video cables.",
     icon: Cable,
   },
   {
     title: "Software",
-    description: "Design and media software, office applications, operating systems, Microsoft products, Adobe products, NAS solutions and security software.",
+    description:
+      "Design and media software, office applications, operating systems, Microsoft products, Adobe products, NAS solutions and security software.",
     icon: Code,
   },
   {
     title: "IT Services & Technical Support",
-    description: "Repair and maintenance for PCs, CCTV, access control systems, laptops, printers, plotters, security devices and UPS systems, plus IT project management, IP telephony and video conferencing support.",
+    description:
+      "Repair and maintenance for PCs, CCTV, access control systems, laptops, printers, plotters, security devices and UPS systems, plus IT project management, IP telephony and video conferencing support.",
     icon: Wrench,
   },
 ];
@@ -374,8 +389,8 @@ function ProductCategories() {
             className="rounded-xl border border-line bg-white p-5 transition-colors hover:border-cable"
           >
             <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-white-100 text-cable">
-  <category.icon size={22} strokeWidth={1.8} />
-</div>
+              <category.icon size={22} strokeWidth={1.8} />
+            </div>
 
             <h3 className="mb-3 font-display text-lg font-bold leading-snug">
               {category.title}

@@ -13,7 +13,6 @@ const NAV = [
   { name: "Site Survey", href: "/#survey" },
   { name: "About Us", href: "/about" },
   { name: "Contact", href: "/#contact" },
-  { name: 'Solar Calculator', href: '/solar' }
 ];
 
 export default function Header() {
@@ -34,7 +33,7 @@ export default function Header() {
           className="flex min-w-0 shrink items-center gap-2"
         >
           <img
-            src="/images/cropped-pcclub.jpg"
+            src="/images/cropped-pcclub.jpeg"
             alt="PC Club BD logo"
             className="h-9 w-auto max-w-10 shrink-0 object-contain sm:h-10 sm:max-w-none"
           />
